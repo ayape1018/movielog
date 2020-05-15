@@ -19,6 +19,7 @@ class WorksController < ApplicationController
 
   def new
     @work = Work.new
+    @work.director_id = params[:director_id] if params[:director_id].present?
   end
 
   def edit
@@ -43,7 +44,7 @@ class WorksController < ApplicationController
   end
 
   def work_params
-    params[:work].permit(:title, :release, :starring, :description)
+    params[:work].permit(:title, :director_id, :release, :starring, :description)
   end
 
 end
