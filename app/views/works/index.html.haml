@@ -1,0 +1,12 @@
+%h1 Works#index
+%p Find me in app/views/works/index.html.haml
+-@works.each do |work|
+  タイトル：
+  =link_to work.title, work_path(work)
+  %br
+  =link_to '編集する', edit_work_path(work)
+  =link_to '削除する', work_path(work), method: :delete, data: {confirm: '本当に削除しますか？'}
+  %br
+
+  %hr
+=link_to '新規登録', new_work_path

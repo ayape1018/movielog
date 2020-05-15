@@ -1,0 +1,17 @@
+タイトル：
+=@work.title
+%br
+リリース年：
+=@work.release
+%br
+主演：
+=@work.starring
+%br
+説明文：
+=@work.description
+%br
+=link_to '編集する', edit_work_path(@work)
+%br
+=link_to '削除する', work_path(@work), method: :delete, data: {confirm: '本当に削除しますか？'}
+%br
+=link_to '一覧に戻る', works_path

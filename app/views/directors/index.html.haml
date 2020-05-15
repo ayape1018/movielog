@@ -1,0 +1,12 @@
+%h1 Directors#index
+%p Find me in app/views/directors/index.html.haml
+-@directors.each do |director|
+  監督名：
+  =link_to director.name, director_path(director)
+  %br
+  =link_to '編集する', edit_director_path(director)
+  =link_to '削除する', director_path(director), method: :delete, data: {confirm: '本当に削除しますか？'}
+  %br
+
+  %hr
+=link_to '新規登録', new_director_path
