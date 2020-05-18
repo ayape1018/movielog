@@ -1,12 +1,17 @@
 %h1 Works#index
 %p Find me in app/views/works/index.html.haml
 -@works.each do |work|
-  タイトル：
-  =link_to work.title, work_path(work)
-  %br
-  =link_to '編集する', edit_work_path(work)
-  =link_to '削除する', work_path(work), method: :delete, data: {confirm: '本当に削除しますか？'}
+
+  =link_to "#{work.title} / #{work.director.name}(#{work.release})", work_path(work)
+  =link_to '上へ', higher_work_path(work), class: work.position == 1 ? 'disabled' : ''
+  -# =link_to higher_work_path(work) do
+    %i.fas.fa-arrow-up
+  -# %br
+  -# =link_to '編集する', edit_work_path(work)
+  -# =link_to '削除する', work_path(work), method: :delete, data: {confirm: '本当に削除しますか？'}
   %br
 
   %hr
 =link_to '新規登録', new_work_path
+%br
+=link_to 'トップに戻る', root_path

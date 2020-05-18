@@ -1,0 +1,13 @@
+%h1 home#index
+%p ようこそMovielogへ
+-@works.each do |work|
+  タイトル：
+  =link_to work.title, work_path(work)
+  %br
+=link_to '詳しくは作品一覧へ', works_path
+%br
+-@directors.each do |director|
+  監督名：
+  =link_to director.name, director_path(director)
+  %br
+=link_to '詳しくは監督一覧へ', directors_path

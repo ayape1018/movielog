@@ -1,7 +1,9 @@
 class Work < ApplicationRecord
   belongs_to :director
 
-  scope :by_id, ->{ order(id: :asc) }
+  acts_as_list
+
+  scope :by_position, ->{ order(position: :asc) }
 
   validates :title, presence: true
   validates :title, uniqueness: true
