@@ -4,7 +4,7 @@
 
   =link_to "#{work.title} / #{work.director.name}(#{work.release})", work_path(work)
   =link_to '上へ', higher_work_path(work), class: work.position == 1 ? 'disabled' : ''
-  -# =link_to higher_work_path(work) do
+  =link_to higher_work_path(work) do
     %i.fas.fa-arrow-up
   -# %br
   -# =link_to '編集する', edit_work_path(work)
