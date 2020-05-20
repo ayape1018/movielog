@@ -1,17 +1,119 @@
-%h1 Works#index
-%p Find me in app/views/works/index.html.haml
--@works.each do |work|
+-# %h1 Works#index
+-# %p Find me in app/views/works/index.html.haml
+-# -@works.each do |work|
+-#
+-#   =link_to "#{work.title} / #{work.director.name}(#{work.release})", work_path(work)
+-#   =link_to '上へ', higher_work_path(work), class: work.position == 1 ? 'disabled' : ''
+-#   -# =link_to higher_work_path(work) do
+-#     %i.fas.fa-arrow-up
+-#   -# %br
+-#   -# =link_to '編集する', edit_work_path(work)
+-#   -# =link_to '削除する', work_path(work), method: :delete, data: {confirm: '本当に削除しますか？'}
+-#   %br
+-#
+-#   %hr
+-# =link_to '新規登録', new_work_path
+-# %br
+-# =link_to 'トップに戻る', root_path
 
-  =link_to "#{work.title} / #{work.director.name}(#{work.release})", work_path(work)
-  =link_to '上へ', higher_work_path(work), class: work.position == 1 ? 'disabled' : ''
-  -# =link_to higher_work_path(work) do
-    %i.fas.fa-arrow-up
-  -# %br
-  -# =link_to '編集する', edit_work_path(work)
-  -# =link_to '削除する', work_path(work), method: :delete, data: {confirm: '本当に削除しますか？'}
-  %br
-
-  %hr
-=link_to '新規登録', new_work_path
-%br
-=link_to 'トップに戻る', root_path
+/ >>>>>>>>>>>>>>>> Welcome Area Start <<<<<<<<<<<<<<<<
+%section#home.welcome_area.gradient-background-overlay.clearfix{:style => "background-image: url('img/background-img.jpg');"}
+  .container.h-100
+    .row.h-100.align-items-center.justify-content-end
+      .col-12.col-lg-7
+        .welcome_area_content
+          .welcome_content
+            .cd-intro
+              %h2.cd-headline.clip.is-full-width
+                %span.cd-words-wrapper
+                  %b.is-visible Welcome to Movielog.
+                  %b You can find awesome movies.
+            %p Enjoy your time!
+            -# %a.btn.light-btn{:href => "#"} Learn More
+/ >>>>>>>>>>>>>>>> Welcome Area End <<<<<<<<<<<<<<<<
+/ >>>>>>>>>>>>>>>> Project area start <<<<<<<<<<<<<<<<
+%section#portfolio.gallery_area.section_padding_0_100.clearfix
+  .container
+    .row
+      .col-12
+        -# .gallery_menu
+          .text-center.portfolio-menu
+            %button.active.btn.btn-md{"data-filter" => "*", :type => "button"}
+              All
+              %span.badge 9
+            %button.btn.btn-md{"data-filter" => ".gra", :type => "button"}
+              Graphic
+              %span.badge 5
+            %button.btn.btn-md{"data-filter" => ".art", :type => "button"}
+              Art
+              %span.badge 3
+            %button.btn.btn-md{"data-filter" => ".bra", :type => "button"}
+              Branding
+              %span.badge 1
+        .gallery_full_width_images_area.row.clearfix
+          / Single gallery Item
+          -@works.each do |work|
+            .col-12.col-sm-6.col-md-4.single_gallery_item
+              .single_gallery_content
+                %img{:alt => "", :src => "img/gallery/p-1.jpg"}/
+                / Hover Effects
+                .hover_overlay
+                  .gallery_info
+                    .zoom-details-btn
+                      %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-1.jpg"}
+                        %i.fa.fa-search-plus
+                      =link_to work_path(work) do
+                        %i.fa.fa-link
+                    %h5=work.title
+                    %p=work.director.name
+                    %p=work.release
+    .load-more-btn.text-center
+      .row
+        .col-12
+          %a.btn.light-btn{:href => "#"} Load More
+/ >>>>>>>>>>>>>>>> Project area end <<<<<<<<<<<<<<<<
+/ >>>>>>>>>>>>>>>> Our Service Area Start <<<<<<<<<<<<<<<<
+%section.our_service_area.section_padding_0_50
+  .container
+    .row
+      .col-12
+        .section_heading
+          %h2 Our Service
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tempora fugit, assumenda possimus porro, hic!
+      .col-12.col-sm-6.col-md-4
+        .single_service
+          %i.ti-ruler-pencil{"aria-hidden" => "true"}
+          .single_service_content
+            %h4 Web Design
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto.
+      .col-12.col-sm-6.col-md-4
+        .single_service
+          %i.ti-desktop{"aria-hidden" => "true"}
+          .single_service_content
+            %h4 Development
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto.
+      .col-12.col-sm-6.col-md-4
+        .single_service
+          %i.ti-crown{"aria-hidden" => "true"}
+          .single_service_content
+            %h4 Branding
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto.
+      .col-12.col-sm-6.col-md-4
+        .single_service
+          %i.ti-paint-bucket{"aria-hidden" => "true"}
+          .single_service_content
+            %h4 Oil Painting
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto.
+      .col-12.col-sm-6.col-md-4
+        .single_service
+          %i.ti-write{"aria-hidden" => "true"}
+          .single_service_content
+            %h4 Content Writing
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto.
+      .col-12.col-sm-6.col-md-4
+        .single_service
+          %i.ti-video-camera{"aria-hidden" => "true"}
+          .single_service_content
+            %h4 Video Making
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto.
+/ >>>>>>>>>>>>>>>> Our Service Area End <<<<<<<<<<<<<<<<

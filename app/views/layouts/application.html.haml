@@ -2,11 +2,19 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
     %title Movielog
+    / Favicon
+    %link{:href => "img/core-img/favicon.ico", :rel => "icon"}/
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     -# = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
+  %body.animsition
+    #preloader
+      .light-load
+    =render 'header'
     = yield
+    =render 'footer'
   = javascript_include_tag "application"

@@ -1,0 +1,334 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    / The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags
+    / Title
+    %title Champ - Minimal Portfolio Template | Home - 4
+    / Favicon
+    %link{:href => "img/core-img/favicon.ico", :rel => "icon"}/
+    / Style CSS
+    %link{:href => "style.css", :rel => "stylesheet"}/
+    / Responsive CSS
+    %link{:href => "css/responsive.css", :rel => "stylesheet"}/
+  %body.animsition
+    / Preloader Start
+    #preloader
+      .light-load
+    / >>>>>>>>>>>>>>>> Header Start <<<<<<<<<<<<<<<<<
+    %header#light-header.header_area
+      .container-fluid.h-100
+        .row.h-100
+          .col-12.h-100
+            .menu-area.h-100
+              %nav.navbar.h-100.navbar-expand-lg.bg-transparent
+                %a.navbar-brand{:href => "index.html"} Champ.
+                %button.navbar-toggler{"aria-controls" => "light-navbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#light-navbar", "data-toggle" => "collapse", :type => "button"}
+                  %span.ti-menu
+                #light-navbar.collapse.navbar-collapse
+                  %ul.navbar-nav.ml-auto
+                    %li.nav-item.active.dropdown
+                      %a#light-home.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                        Home
+                        %span.sr-only (current)
+                      .dropdown-menu{"aria-labelledby" => "light-home"}
+                        %a.dropdown-item.animsition-link{:href => "index-1.html"} Home 1
+                        %a.dropdown-item.animsition-link{:href => "index-2.html"} Home 2
+                        %a.dropdown-item.animsition-link{:href => "index-3.html"} Home 3
+                        %a.dropdown-item.animsition-link{:href => "index-4.html"} Home 4
+                    %li.nav-item
+                      %a.nav-link.animsition-link{:href => "about-us.html"} About Us
+                    %li.nav-item.dropdown
+                      %a#light-portfolio.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Portfolio
+                      .dropdown-menu{"aria-labelledby" => "light-portfolio"}
+                        %a.dropdown-item.animsition-link{:href => "grid-2-column.html"} Grid 2 Column
+                        %a.dropdown-item.animsition-link{:href => "grid-3-column.html"} Grid 3 Column
+                        %a.dropdown-item.animsition-link{:href => "grid-4-column.html"} Grid 4 Column
+                        %a.dropdown-item.animsition-link{:href => "grid-no-gutter-2-column.html"} Grid No Gutter 2 Column
+                        %a.dropdown-item.animsition-link{:href => "grid-no-gutter-3-column.html"} Grid No Gutter 3 Column
+                        %a.dropdown-item.animsition-link{:href => "grid-no-gutter-4-column.html"} Grid No Gutter 4 Column
+                        %a.dropdown-item.animsition-link{:href => "wide-grid-2-column.html"} Wide 2 Column
+                        %a.dropdown-item.animsition-link{:href => "wide-grid-3-column.html"} Wide 3 Column
+                        %a.dropdown-item.animsition-link{:href => "wide-grid-4-column.html"} Wide 4 Column
+                        %a.dropdown-item.animsition-link{:href => "wide-grid-no-gutter-2-column.html"} Wide No Gutter 2 Column
+                        %a.dropdown-item.animsition-link{:href => "wide-grid-no-gutter-3-column.html"} Wide No Gutter 3 Column
+                        %a.dropdown-item.animsition-link{:href => "wide-grid-no-gutter-4-column.html"} Wide No Gutter 4 Column
+                        .dropdown-divider
+                        %a.dropdown-item.animsition-link{:href => "single-portfolio-1.html"} Single Portfolio 1
+                        %a.dropdown-item.animsition-link{:href => "single-portfolio-2.html"} Single Portfolio 2
+                        %a.dropdown-item.animsition-link{:href => "single-portfolio-3.html"} Single Portfolio 3
+                    %li.nav-item.dropdown
+                      %a#light-pages.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Pages
+                      .dropdown-menu{"aria-labelledby" => "light-pages"}
+                        %a.dropdown-item.animsition-link{:href => "about-us.html"} About Us
+                        %a.dropdown-item.animsition-link{:href => "service.html"} Service
+                        %a.dropdown-item.animsition-link{:href => "pricing.html"} Pricing
+                        %a.dropdown-item.animsition-link{:href => "contact.html"} Contact
+                        %a.dropdown-item.animsition-link{:href => "404.html"} 404
+                    %li.nav-item.dropdown
+                      %a#light-blog.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Blog
+                      .dropdown-menu{"aria-labelledby" => "light-blog"}
+                        %a.dropdown-item.animsition-link{:href => "blog-1.html"} Blog
+                        %a.dropdown-item.animsition-link{:href => "single-blog-1.html"} Single Blog
+                    %li.nav-item
+                      %a.nav-link.animsition-link{:href => "contact.html"} Contact
+    / >>>>>>>>>>>>>>>> Header End <<<<<<<<<<<<<<<<<
+    / >>>>>>>>>>>>>>>> Welcome Area Start <<<<<<<<<<<<<<<<
+    %section#home.welcome_area.gradient-background-overlay.clearfix{:style => "background-image: url('img/bg-img/bg-10.jpg');"}
+      .container.h-100
+        .row.h-100.align-items-center.justify-content-end
+          .col-12.col-lg-7
+            .welcome_area_content
+              .welcome_content
+                .cd-intro
+                  %h2.cd-headline.clip.is-full-width
+                    %span.cd-words-wrapper
+                      %b.is-visible Hello, I'm Lim Sarah
+                      %b I'm Fashion Designer.
+                %p We make your dream
+                %a.btn.light-btn{:href => "#"} Learn More
+    / >>>>>>>>>>>>>>>> Welcome Area End <<<<<<<<<<<<<<<<
+    / >>>>>>>>>>>>>>>> Project area start <<<<<<<<<<<<<<<<
+    %section#portfolio.gallery_area.section_padding_0_100.clearfix
+      .container
+        .row
+          .col-12
+            .gallery_menu
+              .text-center.portfolio-menu
+                %button.active.btn.btn-md{"data-filter" => "*", :type => "button"}
+                  All
+                  %span.badge 9
+                %button.btn.btn-md{"data-filter" => ".gra", :type => "button"}
+                  Graphic
+                  %span.badge 5
+                %button.btn.btn-md{"data-filter" => ".art", :type => "button"}
+                  Art
+                  %span.badge 3
+                %button.btn.btn-md{"data-filter" => ".bra", :type => "button"}
+                  Branding
+                  %span.badge 1
+            .gallery_full_width_images_area.row.clearfix
+              / Single gallery Item
+              .gra.col-12.col-sm-6.col-md-4.single_gallery_item
+                .single_gallery_content
+                  %img{:alt => "", :src => "img/gallery/p-1.jpg"}/
+                  / Hover Effects
+                  .hover_overlay
+                    .gallery_info
+                      .zoom-details-btn
+                        %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-1.jpg"}
+                          %i.ti-zoom-in
+                        %a{:href => "single-portfolio-1.html"}
+                          %i.ti-link
+                      %h5 Creative Work
+                      %p Catagory Name
+              / Single gallery Item
+              .gra.col-12.col-sm-6.col-md-4.single_gallery_item
+                .single_gallery_content
+                  %img{:alt => "", :src => "img/gallery/p-2.jpg"}/
+                  / Hover Effects
+                  .hover_overlay
+                    .gallery_info
+                      .zoom-details-btn
+                        %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-2.jpg"}
+                          %i.ti-zoom-in
+                        %a{:href => "single-portfolio-1.html"}
+                          %i.ti-link
+                      %h5 Creative Work
+                      %p Catagory Name
+              / Single gallery Item
+              .art.col-12.col-sm-6.col-md-4.single_gallery_item
+                .single_gallery_content
+                  %img{:alt => "", :src => "img/gallery/p-3.jpg"}/
+                  / Hover Effects
+                  .hover_overlay
+                    .gallery_info
+                      .zoom-details-btn
+                        %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-3.jpg"}
+                          %i.ti-zoom-in
+                        %a{:href => "single-portfolio-1.html"}
+                          %i.ti-link
+                      %h5 Creative Work
+                      %p Catagory Name
+              / Single gallery Item
+              .art.col-12.col-sm-6.col-md-4.single_gallery_item
+                .single_gallery_content
+                  %img{:alt => "", :src => "img/gallery/p-4.jpg"}/
+                  / Hover Effects
+                  .hover_overlay
+                    .gallery_info
+                      .zoom-details-btn
+                        %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-4.jpg"}
+                          %i.ti-zoom-in
+                        %a{:href => "single-portfolio-1.html"}
+                          %i.ti-link
+                      %h5 Creative Work
+                      %p Catagory Name
+              / Single gallery Item
+              .gra.col-12.col-sm-6.col-md-4.single_gallery_item
+                .single_gallery_content
+                  %img{:alt => "", :src => "img/gallery/p-5.jpg"}/
+                  / Hover Effects
+                  .hover_overlay
+                    .gallery_info
+                      .zoom-details-btn
+                        %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-5.jpg"}
+                          %i.ti-zoom-in
+                        %a{:href => "single-portfolio-1.html"}
+                          %i.ti-link
+                      %h5 Creative Work
+                      %p Catagory Name
+              / Single gallery Item
+              .gra.col-12.col-sm-6.col-md-4.single_gallery_item
+                .single_gallery_content
+                  %img{:alt => "", :src => "img/gallery/p-6.jpg"}/
+                  / Hover Effects
+                  .hover_overlay
+                    .gallery_info
+                      .zoom-details-btn
+                        %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-6.jpg"}
+                          %i.ti-zoom-in
+                        %a{:href => "single-portfolio-1.html"}
+                          %i.ti-link
+                      %h5 Creative Work
+                      %p Catagory Name
+              / Single gallery Item
+              .bra.col-12.col-sm-6.col-md-4.single_gallery_item
+                .single_gallery_content
+                  %img{:alt => "", :src => "img/gallery/p-7.jpg"}/
+                  / Hover Effects
+                  .hover_overlay
+                    .gallery_info
+                      .zoom-details-btn
+                        %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-7.jpg"}
+                          %i.ti-zoom-in
+                        %a{:href => "single-portfolio-1.html"}
+                          %i.ti-link
+                      %h5 Creative Work
+                      %p Catagory Name
+              / Single gallery Item
+              .art.col-12.col-sm-6.col-md-4.single_gallery_item
+                .single_gallery_content
+                  %img{:alt => "", :src => "img/gallery/p-8.jpg"}/
+                  / Hover Effects
+                  .hover_overlay
+                    .gallery_info
+                      .zoom-details-btn
+                        %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-8.jpg"}
+                          %i.ti-zoom-in
+                        %a{:href => "single-portfolio-1.html"}
+                          %i.ti-link
+                      %h5 Creative Work
+                      %p Catagory Name
+              / Single gallery Item
+              .gra.col-12.col-sm-6.col-md-4.single_gallery_item
+                .single_gallery_content
+                  %img{:alt => "", :src => "img/gallery/p-9.jpg"}/
+                  / Hover Effects
+                  .hover_overlay
+                    .gallery_info
+                      .zoom-details-btn
+                        %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-9.jpg"}
+                          %i.ti-zoom-in
+                        %a{:href => "single-portfolio-1.html"}
+                          %i.ti-link
+                      %h5 Creative Work
+                      %p Catagory Name
+        .load-more-btn.text-center
+          .row
+            .col-12
+              %a.btn.light-btn{:href => "#"} Load More
+    / >>>>>>>>>>>>>>>> Project area end <<<<<<<<<<<<<<<<
+    / >>>>>>>>>>>>>>>> Our Service Area Start <<<<<<<<<<<<<<<<
+    %section.our_service_area.section_padding_0_50
+      .container
+        .row
+          .col-12
+            .section_heading
+              %h2 Our Service
+              %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tempora fugit, assumenda possimus porro, hic!
+          .col-12.col-sm-6.col-md-4
+            .single_service
+              %i.ti-ruler-pencil{"aria-hidden" => "true"}
+              .single_service_content
+                %h4 Web Design
+                %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto.
+          .col-12.col-sm-6.col-md-4
+            .single_service
+              %i.ti-desktop{"aria-hidden" => "true"}
+              .single_service_content
+                %h4 Development
+                %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto.
+          .col-12.col-sm-6.col-md-4
+            .single_service
+              %i.ti-crown{"aria-hidden" => "true"}
+              .single_service_content
+                %h4 Branding
+                %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto.
+          .col-12.col-sm-6.col-md-4
+            .single_service
+              %i.ti-paint-bucket{"aria-hidden" => "true"}
+              .single_service_content
+                %h4 Oil Painting
+                %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto.
+          .col-12.col-sm-6.col-md-4
+            .single_service
+              %i.ti-write{"aria-hidden" => "true"}
+              .single_service_content
+                %h4 Content Writing
+                %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto.
+          .col-12.col-sm-6.col-md-4
+            .single_service
+              %i.ti-video-camera{"aria-hidden" => "true"}
+              .single_service_content
+                %h4 Video Making
+                %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto.
+    / >>>>>>>>>>>>>>>> Our Service Area End <<<<<<<<<<<<<<<<
+    / >>>>>>>>>>>>>>>> Footer Area Start <<<<<<<<<<<<<<<<
+    %footer.footer_area.section_padding_100.text-center.bg-gray
+      .container
+        .row
+          .col-12
+            / Bottom Footer Copywrite Text Area
+            .footer_content
+              / Footer Content
+              .foo_contents
+                / Footer Logo
+                .footer_logo
+                  %a{:href => "index.html"} Champ.
+                / Footer Social Icon
+                .footer_social_icon
+                  %a{:href => "#"}
+                    %i.ti-facebook{"aria-hidden" => "true"}
+                  %a{:href => "#"}
+                    %i.ti-google{"aria-hidden" => "true"}
+                  %a{:href => "#"}
+                    %i.ti-instagram{"aria-hidden" => "true"}
+                  %a{:href => "#"}
+                    %i.ti-dribbble{"aria-hidden" => "true"}
+                  %a{:href => "#"}
+                    %i.ti-youtube{"aria-hidden" => "true"}
+                %a{:href => "#"} care@Champ.com
+                %a{:href => "#"} (+88095) 1701 236 214
+                %a{:href => "#"} R#21, Melbourne, Australia
+              / Copywrite Text
+              %p
+                Made with
+                %i.fa.fa-heart
+                by
+                %a{:href => "#"} DesigningWorld
+    / >>>>>>>>>>>>>>>> Footer Area End <<<<<<<<<<<<<<<<
+    / >>>>>>>>>>>>>>>> All jQuery Plugins <<<<<<<<<<<<<<<<
+    / jQuery (necessary for all JavaScript plugins)
+    %script{:src => "js/jquery/jquery-2.2.4.min.js"}
+    / Popper js
+    %script{:src => "js/popper.js"}
+    / Bootstrap js
+    %script{:src => "js/bootstrap.min.js"}
+    / All Plugins js
+    %script{:src => "js/plugins.js"}
+    / Active js
+    %script{:src => "js/active.js"}

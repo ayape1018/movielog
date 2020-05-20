@@ -1,21 +1,180 @@
-監督名：
-=@director.name
-%br
-出身国：
-=@director.birthplace
-%br
-作品：
-%br
--@director.works.each do |work|
-  =link_to "・#{work.title}", work_path(work)
-  %br
-%br
-=link_to '編集する', edit_director_path(@director)
-%br
-=link_to '削除する', director_path(@director), method: :delete, data: {confirm: '本当に削除しますか？'}
-%br
-=link_to '作品を登録する', new_work_path(director_id: @director.id)
-%br
-=link_to '一覧に戻る', directors_path
-%br
-=link_to 'トップに戻る', root_path
+-# 監督名：
+-# =@director.name
+-# %br
+-# 出身国：
+-# =@director.birthplace
+-# %br
+-# 作品：
+-# %br
+-# -@director.works.each do |work|
+-#   =link_to "・#{work.title}", work_path(work)
+-#   %br
+-# %br
+-# =link_to '編集する', edit_director_path(@director)
+-# %br
+-# =link_to '削除する', director_path(@director), method: :delete, data: {confirm: '本当に削除しますか？'}
+-# %br
+-# =link_to '作品を登録する', new_work_path(director_id: @director.id)
+-# %br
+-# =link_to '一覧に戻る', directors_path
+-# %br
+-# =link_to 'トップに戻る', root_path
+
+/ >>>>>>>>>>>>>>>> Breadcumb Area Start <<<<<<<<<<<<<<<<
+%section.breadcumb_area
+  .container-fluid
+    .row.align-items-center
+      .col-12
+        .breadcumb_section.d-sm-flex.align-items-center.justify-content-between
+          / Breadcumb Title
+          -# .page_title
+          -#   %h3 Single Portfolio
+          -#   %p Lorem ipsum dolor sit amet.
+          / Pagination
+          %nav{"aria-label" => "breadcrumb"}
+            %ol.breadcrumb
+              %li.breadcrumb-item
+                =link_to 'Home', root_path
+                -# %a{:href => "#"} Home
+              %li.breadcrumb-item
+                =link_to 'Movie index', works_path
+                -# %a{:href => "#"} Portfolio
+              %li.breadcrumb-item.active{"aria-current" => "page"}=@director.name
+/ >>>>>>>>>>>>>>>> Breadcumb Area End <<<<<<<<<<<<<<<<
+/ >>>>>>>>>>>>>>>> Single Portfolio Area Start <<<<<<<<<<<<<<<<
+%section.single_portfolio_area.section_padding_40_0
+  .container
+    .row
+      .col-12
+        / Single Portfolio Image
+        .single_portfolio_img
+          %img{:alt => "", :src => "/img/gallery/p-34.jpg"}/
+        / Single Portfolio Meta Data
+        .single_portfolio_meta
+          %ul
+            %li
+              %i.fa.fa-user-o{"aria-hidden" => "true"}
+              Birthplace:
+              =@director.birthplace
+            -#   %a{:href => "#"} 15 Jun 2017
+            -# %li
+            -#   %i.fa.fa-calendar{"aria-hidden" => "true"}
+            -#   Created:
+            -#   %a{:href => "#"} Lim Sarah
+            -# %li
+            -#   %i.fa.fa-user-o{"aria-hidden" => "true"}
+            -#   Director:
+            -#   =link_to @work.director.name, director_path(@work.director)
+              -# %a{:href => "#"} Nadim
+            -# %li
+            -#   %i.fa.fa-tag{"aria-hidden" => "true"}
+            -#   Catagory:
+            -#   %a{:href => "#"} WordPress Development
+        / Single Portfolio Title
+        .single_portfolio_title
+          %h4=@director.name
+        .line
+        .single_portfolio_content
+          %p
+          Works
+          %br
+          -@director.works.each do |work|
+            =link_to "・#{work.title}(#{work.release})", work_path(work)
+            %br
+          -# %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod culpa consequatur laudantium! Dignissimos suscipit fuga iure at, quis vel quae? Placeat veniam reprehenderit mollitia expedita perferendis similique nihil odit atque.
+          -# %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium hic deserunt at voluptatem ipsam architecto debitis ducimus ratione rerum dignissimos obcaecati eos error fugit natus, aliquid. Doloremque quae odit, facere mollitia deserunt voluptatem facilis. Sequi illum temporibus ex architecto, dolorum quo facere fuga iste molestiae, eius unde assumenda fugiat, reprehenderit.
+          -# %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laudantium, numquam sit mollitia quis. Cumque quam libero placeat neque consectetur omnis, magnam saepe asperiores eaque minima veniam, labore incidunt, doloribus officia corporis eos nostrum sapiente quibusdam magni commodi exercitationem. Saepe recusandae, odio consequatur. Sed reprehenderit voluptatem incidunt soluta hic qui atque minima maxime, esse ut! Quod eum numquam veniam nobis sed modi magni, debitis labore quisquam laboriosam quos iusto nemo molestiae ab in autem, aliquam laborum! Ut doloribus maiores laborum quod porro atque tempore ipsam officia earum rem quidem molestiae soluta, quis similique eaque esse minima odio optio commodi culpa rerum quasi dolor laudantium adipisci? Modi unde doloremque mollitia officiis commodi perferendis nihil dicta voluptates similique maiores aperiam esse ullam enim ducimus quibusdam illo distinctio, quaerat voluptatum rerum? Incidunt nesciunt et laborum iure, voluptatibus deleniti quia esse velit porro debitis asperiores quam quo suscipit omnis veniam voluptatem, quibusdam vitae consectetur.
+/ >>>>>>>>>>>>>>>> Single Portfolio Area End <<<<<<<<<<<<<<<<
+/ >>>>>>>>>>>>>>>> Related Area Start <<<<<<<<<<<<<<<<
+%section.related-area.section_padding_100_70
+  .container-fluid
+    .row
+      .col-12
+        .section_heading
+          %h4 Releted Projects
+        .related_projects_area.owl-carousel
+          / Single Releted Project Area CSS
+          .single_releted_project
+            .single_gallery_content
+              %img{:alt => "", :src => "/img/gallery/p-11.jpg"}/
+              / Hover Effects
+              .hover_overlay
+                .gallery_info
+                  .zoom-details-btn
+                    %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-11.jpg"}
+                      %i.ti-zoom-in
+                    %a{:href => "single-portfolio-1.html"}
+                      %i.ti-link
+                  %h5 Creative Work
+                  %p Catagory Name
+          / Single Releted Project Area CSS
+          .single_releted_project
+            .single_gallery_content
+              %img{:alt => "", :src => "/img/gallery/p-12.jpg"}/
+              / Hover Effects
+              .hover_overlay
+                .gallery_info
+                  .zoom-details-btn
+                    %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-12.jpg"}
+                      %i.ti-zoom-in
+                    %a{:href => "single-portfolio-1.html"}
+                      %i.ti-link
+                  %h5 Creative Work
+                  %p Catagory Name
+          / Single Releted Project Area CSS
+          .single_releted_project
+            .single_gallery_content
+              %img{:alt => "", :src => "/img/gallery/p-13.jpg"}/
+              / Hover Effects
+              .hover_overlay
+                .gallery_info
+                  .zoom-details-btn
+                    %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-13.jpg"}
+                      %i.ti-zoom-in
+                    %a{:href => "single-portfolio-1.html"}
+                      %i.ti-link
+                  %h5 Creative Work
+                  %p Catagory Name
+          / Single Releted Project Area CSS
+          .single_releted_project
+            .single_gallery_content
+              %img{:alt => "", :src => "/img/gallery/p-14.jpg"}/
+              / Hover Effects
+              .hover_overlay
+                .gallery_info
+                  .zoom-details-btn
+                    %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-14.jpg"}
+                      %i.ti-zoom-in
+                    %a{:href => "single-portfolio-1.html"}
+                      %i.ti-link
+                  %h5 Creative Work
+                  %p Catagory Name
+          / Single Releted Project Area CSS
+          .single_releted_project
+            .single_gallery_content
+              %img{:alt => "", :src => "/img/gallery/p-15.jpg"}/
+              / Hover Effects
+              .hover_overlay
+                .gallery_info
+                  .zoom-details-btn
+                    %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-15.jpg"}
+                      %i.ti-zoom-in
+                    %a{:href => "single-portfolio-1.html"}
+                      %i.ti-link
+                  %h5 Creative Work
+                  %p Catagory Name
+          / Single Releted Project Area CSS
+          .single_releted_project
+            .single_gallery_content
+              %img{:alt => "", :src => "/img/gallery/p-16.jpg"}/
+              / Hover Effects
+              .hover_overlay
+                .gallery_info
+                  .zoom-details-btn
+                    %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-16.jpg"}
+                      %i.ti-zoom-in
+                    %a{:href => "single-portfolio-1.html"}
+                      %i.ti-link
+                  %h5 Creative Work
+                  %p Catagory Name
+/ >>>>>>>>>>>>>>>> Related Area End <<<<<<<<<<<<<<<<

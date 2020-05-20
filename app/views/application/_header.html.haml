@@ -1,0 +1,60 @@
+/ >>>>>>>>>>>>>>>> Header Start <<<<<<<<<<<<<<<<<
+%header#light-header.header_area
+  .container-fluid.h-100
+    .row.h-100
+      .col-12.h-100
+        .menu-area.h-100
+          %nav.navbar.h-100.navbar-expand-lg.bg-transparent
+            %a.navbar-brand{:href => "index.html"} Champ.
+            %button.navbar-toggler{"aria-controls" => "light-navbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#light-navbar", "data-toggle" => "collapse", :type => "button"}
+              %i.fa.fa-bars
+            #light-navbar.collapse.navbar-collapse
+              %ul.navbar-nav.ml-auto
+                -# %li.nav-item.active.dropdown
+                -#   %a#light-home.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                -#     Home
+                %li.nav-item
+                  =link_to 'Home', root_path, class: 'nav-link animsition-link'
+                  -# %a.nav-link.animsition-link{:href => "about-us.html"} About Us
+                %li.nav-item
+                  =link_to 'Movies', works_path, class: 'nav-link animsition-link'
+                  -# %a.nav-link.animsition-link{:href => "about-us.html"} About Us
+                %li.nav-item
+                  =link_to 'Directors', directors_path, class: 'nav-link animsition-link'
+                  -# %a.nav-link.animsition-link{:href => "about-us.html"} About Us
+
+                -# %li.nav-item.dropdown
+                -#   %a#light-portfolio.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Portfolio
+                -#   .dropdown-menu{"aria-labelledby" => "light-portfolio"}
+                -#     %a.dropdown-item.animsition-link{:href => "grid-2-column.html"} Grid 2 Column
+                -#     %a.dropdown-item.animsition-link{:href => "grid-3-column.html"} Grid 3 Column
+                -#     %a.dropdown-item.animsition-link{:href => "grid-4-column.html"} Grid 4 Column
+                -#     %a.dropdown-item.animsition-link{:href => "grid-no-gutter-2-column.html"} Grid No Gutter 2 Column
+                -#     %a.dropdown-item.animsition-link{:href => "grid-no-gutter-3-column.html"} Grid No Gutter 3 Column
+                -#     %a.dropdown-item.animsition-link{:href => "grid-no-gutter-4-column.html"} Grid No Gutter 4 Column
+                -#     %a.dropdown-item.animsition-link{:href => "wide-grid-2-column.html"} Wide 2 Column
+                -#     %a.dropdown-item.animsition-link{:href => "wide-grid-3-column.html"} Wide 3 Column
+                -#     %a.dropdown-item.animsition-link{:href => "wide-grid-4-column.html"} Wide 4 Column
+                -#     %a.dropdown-item.animsition-link{:href => "wide-grid-no-gutter-2-column.html"} Wide No Gutter 2 Column
+                -#     %a.dropdown-item.animsition-link{:href => "wide-grid-no-gutter-3-column.html"} Wide No Gutter 3 Column
+                -#     %a.dropdown-item.animsition-link{:href => "wide-grid-no-gutter-4-column.html"} Wide No Gutter 4 Column
+                -#     .dropdown-divider
+                -#     %a.dropdown-item.animsition-link{:href => "single-portfolio-1.html"} Single Portfolio 1
+                -#     %a.dropdown-item.animsition-link{:href => "single-portfolio-2.html"} Single Portfolio 2
+                -#     %a.dropdown-item.animsition-link{:href => "single-portfolio-3.html"} Single Portfolio 3
+                -# %li.nav-item.dropdown
+                -#   %a#light-pages.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Pages
+                -#   .dropdown-menu{"aria-labelledby" => "light-pages"}
+                -#     %a.dropdown-item.animsition-link{:href => "about-us.html"} About Us
+                -#     %a.dropdown-item.animsition-link{:href => "service.html"} Service
+                -#     %a.dropdown-item.animsition-link{:href => "pricing.html"} Pricing
+                -#     %a.dropdown-item.animsition-link{:href => "contact.html"} Contact
+                -#     %a.dropdown-item.animsition-link{:href => "404.html"} 404
+                -# %li.nav-item.dropdown
+                -#   %a#light-blog.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Blog
+                -#   .dropdown-menu{"aria-labelledby" => "light-blog"}
+                -#     %a.dropdown-item.animsition-link{:href => "blog-1.html"} Blog
+                -#     %a.dropdown-item.animsition-link{:href => "single-blog-1.html"} Single Blog
+                -# %li.nav-item
+                -#   %a.nav-link.animsition-link{:href => "contact.html"} Contact
+/ >>>>>>>>>>>>>>>> Header End <<<<<<<<<<<<<<<<<
