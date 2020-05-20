@@ -55,7 +55,8 @@
           -@works.each do |work|
             .col-12.col-sm-6.col-md-4.single_gallery_item
               .single_gallery_content
-                %img{:alt => "", :src => "img/gallery/p-1.jpg"}/
+                =image_tag work.image_url if work.image.present?
+                -# %img{:alt => "", :src => "img/gallery/p-1.jpg"}/
                 / Hover Effects
                 .hover_overlay
                   .gallery_info
