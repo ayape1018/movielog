@@ -10,4 +10,8 @@ class Work < ApplicationRecord
   validates :title, uniqueness: true
   validates :release, presence: true
   validates :starring, presence: true
+
+  def related_works
+    director.works.where.not(id: id)
+  end
 end

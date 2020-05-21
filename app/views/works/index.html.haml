@@ -55,13 +55,14 @@
           -@works.each do |work|
             .col-12.col-sm-6.col-md-4.single_gallery_item
               .single_gallery_content
-                =image_tag work.image_url if work.image.present?
+                =image_tag work.image_url(:thumb)
                 -# %img{:alt => "", :src => "img/gallery/p-1.jpg"}/
                 / Hover Effects
                 .hover_overlay
                   .gallery_info
                     .zoom-details-btn
-                      %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-1.jpg"}
+                      -# %a.gallery_img.animated.fadeInDown{}
+                      =link_to work.image_url, class: 'gallery_img animated fadeInDown' do
                         %i.fa.fa-search-plus
                       =link_to work_path(work) do
                         %i.fa.fa-link

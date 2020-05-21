@@ -49,7 +49,8 @@
       .col-12
         / Single Portfolio Image
         .single_portfolio_img
-          %img{:alt => "", :src => "/img/gallery/p-34.jpg"}/
+          -# %img{:alt => "", :src => "/img/gallery/p-34.jpg"}
+          =image_tag @work.image_url
         / Single Portfolio Meta Data
         .single_portfolio_meta
           %ul
@@ -87,90 +88,92 @@
     .row
       .col-12
         .section_heading
-          %h4 Releted Projects
+          %h4="#{@work.director.name} Related Works"
         .related_projects_area.owl-carousel
           / Single Releted Project Area CSS
-          .single_releted_project
-            .single_gallery_content
-              %img{:alt => "", :src => "/img/gallery/p-11.jpg"}/
-              / Hover Effects
-              .hover_overlay
-                .gallery_info
-                  .zoom-details-btn
-                    %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-11.jpg"}
-                      %i.ti-zoom-in
-                    %a{:href => "single-portfolio-1.html"}
-                      %i.ti-link
-                  %h5 Creative Work
-                  %p Catagory Name
-          / Single Releted Project Area CSS
-          .single_releted_project
-            .single_gallery_content
-              %img{:alt => "", :src => "/img/gallery/p-12.jpg"}/
-              / Hover Effects
-              .hover_overlay
-                .gallery_info
-                  .zoom-details-btn
-                    %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-12.jpg"}
-                      %i.ti-zoom-in
-                    %a{:href => "single-portfolio-1.html"}
-                      %i.ti-link
-                  %h5 Creative Work
-                  %p Catagory Name
-          / Single Releted Project Area CSS
-          .single_releted_project
-            .single_gallery_content
-              %img{:alt => "", :src => "/img/gallery/p-13.jpg"}/
-              / Hover Effects
-              .hover_overlay
-                .gallery_info
-                  .zoom-details-btn
-                    %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-13.jpg"}
-                      %i.ti-zoom-in
-                    %a{:href => "single-portfolio-1.html"}
-                      %i.ti-link
-                  %h5 Creative Work
-                  %p Catagory Name
-          / Single Releted Project Area CSS
-          .single_releted_project
-            .single_gallery_content
-              %img{:alt => "", :src => "/img/gallery/p-14.jpg"}/
-              / Hover Effects
-              .hover_overlay
-                .gallery_info
-                  .zoom-details-btn
-                    %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-14.jpg"}
-                      %i.ti-zoom-in
-                    %a{:href => "single-portfolio-1.html"}
-                      %i.ti-link
-                  %h5 Creative Work
-                  %p Catagory Name
-          / Single Releted Project Area CSS
-          .single_releted_project
-            .single_gallery_content
-              %img{:alt => "", :src => "/img/gallery/p-15.jpg"}/
-              / Hover Effects
-              .hover_overlay
-                .gallery_info
-                  .zoom-details-btn
-                    %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-15.jpg"}
-                      %i.ti-zoom-in
-                    %a{:href => "single-portfolio-1.html"}
-                      %i.ti-link
-                  %h5 Creative Work
-                  %p Catagory Name
-          / Single Releted Project Area CSS
-          .single_releted_project
-            .single_gallery_content
-              %img{:alt => "", :src => "/img/gallery/p-16.jpg"}/
-              / Hover Effects
-              .hover_overlay
-                .gallery_info
-                  .zoom-details-btn
-                    %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-16.jpg"}
-                      %i.ti-zoom-in
-                    %a{:href => "single-portfolio-1.html"}
-                      %i.ti-link
-                  %h5 Creative Work
-                  %p Catagory Name
+          -@work.related_works.each do |related_work|
+            .single_releted_project
+              .single_gallery_content
+                =image_tag related_work.image_url(:thumb)
+                -# %img{:alt => "", :src => "/img/gallery/p-11.jpg"}/
+                / Hover Effects
+                .hover_overlay
+                  .gallery_info
+                    .zoom-details-btn
+                      =link_to related_work.image_url, class: 'gallery_img animated fadeInDown' do
+                        %i.fa.fa-search-plus
+                      =link_to work_path(related_work) do
+                        %i.fa.fa-link
+                    %h5=related_work.title
+                    %p="#{related_work.director.name} (#{related_work.release})"
+          -# / Single Releted Project Area CSS
+          -# .single_releted_project
+          -#   .single_gallery_content
+          -#     %img{:alt => "", :src => "/img/gallery/p-12.jpg"}/
+          -#     / Hover Effects
+          -#     .hover_overlay
+          -#       .gallery_info
+          -#         .zoom-details-btn
+          -#           %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-12.jpg"}
+          -#             %i.ti-zoom-in
+          -#           %a{:href => "single-portfolio-1.html"}
+          -#             %i.ti-link
+          -#         %h5 Creative Work
+          -#         %p Catagory Name
+          -# / Single Releted Project Area CSS
+          -# .single_releted_project
+          -#   .single_gallery_content
+          -#     %img{:alt => "", :src => "/img/gallery/p-13.jpg"}/
+          -#     / Hover Effects
+          -#     .hover_overlay
+          -#       .gallery_info
+          -#         .zoom-details-btn
+          -#           %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-13.jpg"}
+          -#             %i.ti-zoom-in
+          -#           %a{:href => "single-portfolio-1.html"}
+          -#             %i.ti-link
+          -#         %h5 Creative Work
+          -#         %p Catagory Name
+          -# / Single Releted Project Area CSS
+          -# .single_releted_project
+          -#   .single_gallery_content
+          -#     %img{:alt => "", :src => "/img/gallery/p-14.jpg"}/
+          -#     / Hover Effects
+          -#     .hover_overlay
+          -#       .gallery_info
+          -#         .zoom-details-btn
+          -#           %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-14.jpg"}
+          -#             %i.ti-zoom-in
+          -#           %a{:href => "single-portfolio-1.html"}
+          -#             %i.ti-link
+          -#         %h5 Creative Work
+          -#         %p Catagory Name
+          -# / Single Releted Project Area CSS
+          -# .single_releted_project
+          -#   .single_gallery_content
+          -#     %img{:alt => "", :src => "/img/gallery/p-15.jpg"}/
+          -#     / Hover Effects
+          -#     .hover_overlay
+          -#       .gallery_info
+          -#         .zoom-details-btn
+          -#           %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-15.jpg"}
+          -#             %i.ti-zoom-in
+          -#           %a{:href => "single-portfolio-1.html"}
+          -#             %i.ti-link
+          -#         %h5 Creative Work
+          -#         %p Catagory Name
+          -# / Single Releted Project Area CSS
+          -# .single_releted_project
+          -#   .single_gallery_content
+          -#     %img{:alt => "", :src => "/img/gallery/p-16.jpg"}/
+          -#     / Hover Effects
+          -#     .hover_overlay
+          -#       .gallery_info
+          -#         .zoom-details-btn
+          -#           %a.gallery_img.animated.fadeInDown{:href => "/img/gallery/p-16.jpg"}
+          -#             %i.ti-zoom-in
+          -#           %a{:href => "single-portfolio-1.html"}
+          -#             %i.ti-link
+          -#         %h5 Creative Work
+          -#         %p Catagory Name
 / >>>>>>>>>>>>>>>> Related Area End <<<<<<<<<<<<<<<<
