@@ -5,7 +5,9 @@
       .col-12.h-100
         .menu-area.h-100
           %nav.navbar.h-100.navbar-expand-lg.bg-transparent
-            %a.navbar-brand{:href => "index.html"} Champ.
+            -# %a.navbar-brand{:href => "index.html"} Champ.
+            =link_to root_path, class: 'navbar-brand' do
+              =image_tag '/img/logo_transparent.png'
             %button.navbar-toggler{"aria-controls" => "light-navbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#light-navbar", "data-toggle" => "collapse", :type => "button"}
               %i.fa.fa-bars
             #light-navbar.collapse.navbar-collapse
