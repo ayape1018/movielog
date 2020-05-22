@@ -1,8 +1,11 @@
 %section
   .container.pt-5
     .h-100.pt-5
-      作品編集ページ
+      Edit work
       =render 'form'
-      =link_to '詳細ページに戻る', work_path(@work)
-      %br
-      =link_to 'トップに戻る', root_path
+  .container.pt-2
+    =link_to 'Delete', work_path(@work), method: :delete, data: {confirm: '本当に削除しますか？'}
+    \/
+    =link_to 'Back to work page', work_path(@work)
+    \/
+    =link_to 'Go to top', root_path
