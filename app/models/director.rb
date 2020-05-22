@@ -1,4 +1,5 @@
 class Director < ApplicationRecord
+  mount_uploader :image, DirectorImageUploader
   has_many :works
 
   scope :by_id, ->{ order(id: :asc) }

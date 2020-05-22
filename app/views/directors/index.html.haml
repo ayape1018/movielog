@@ -14,7 +14,7 @@
 -# =link_to 'トップに戻る', root_path
 -#
 / >>>>>>>>>>>>>>>> Welcome Area Start <<<<<<<<<<<<<<<<
-%section#home.welcome_area.gradient-background-overlay.clearfix{:style => "background-image: url('img/bg-img/bg-10.jpg');"}
+%section#home.welcome_area.gradient-background-overlay.clearfix{:style => "background-image: url('img/background-img.jpg');"}
   .container.h-100
     .row.h-100.align-items-center.justify-content-end
       .col-12.col-lg-7
@@ -23,10 +23,10 @@
             .cd-intro
               %h2.cd-headline.clip.is-full-width
                 %span.cd-words-wrapper
-                  %b.is-visible Hello, I'm Lim Sarah
-                  %b I'm Fashion Designer.
-            %p We make your dream
-            %a.btn.light-btn{:href => "#"} Learn More
+                  %b.is-visible Welcome to Movielog.
+                  %b You can find awesome movies.
+            %p Enjoy your time!
+            -# %a.btn.light-btn{:href => "#"} Learn More
 / >>>>>>>>>>>>>>>> Welcome Area End <<<<<<<<<<<<<<<<
 / >>>>>>>>>>>>>>>> Project area start <<<<<<<<<<<<<<<<
 %section#portfolio.gallery_area.section_padding_0_100.clearfix
@@ -52,15 +52,19 @@
           -@directors.each do |director|
             .col-12.col-sm-6.col-md-4.single_gallery_item
               .single_gallery_content
-                %img{:alt => "", :src => "img/gallery/p-1.jpg"}/
+                -if director.image_url.present?
+                  =image_tag director.image_url(:thumb)
+                -else
+                  =image_tag '/img/default_work.png'
                 / Hover Effects
                 .hover_overlay
                   .gallery_info
                     .zoom-details-btn
-                      %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-1.jpg"}
+                      =link_to director.image_url, class: director.image.present? ? 'gallery_img animated fadeInDown' : 'gallery_img animated fadeInDown disabled' do
                         %i.fa.fa-search-plus
                       =link_to director_path(director) do
                         %i.fa.fa-link
+                      -# %a.gallery_img.animated.fadeInDown{:href => "img/gallery/p-1.jpg"}
                     %h5=director.name
                     %p=director.birthplace
                     -# %p=work.release

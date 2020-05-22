@@ -1,4 +1,10 @@
 =bootstrap_form_with model: @director, local: true do |f|
   =f.text_field :name
   =f.text_field :birthplace
+  =f.file_field :image
+  -if @director.image.present?
+    =image_tag @director.image_url(:thumb)
+    .checkbox.checkbox-primary.m-t-5
+      =f.check_box_without_bootstrap :remove_image
+      =f.label :remove_image, 'Image Delete'
   =f.submit

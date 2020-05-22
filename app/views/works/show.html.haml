@@ -98,7 +98,10 @@
           -@work.related_works.each do |related_work|
             .single_releted_project
               .single_gallery_content
-                =image_tag related_work.image_url(:thumb)
+                -if related_work.image_url.present?
+                  =image_tag related_work.image_url(:thumb)
+                -else
+                  =image_tag '/img/default_work.png'
                 -# %img{:alt => "", :src => "/img/gallery/p-11.jpg"}/
                 / Hover Effects
                 .hover_overlay
