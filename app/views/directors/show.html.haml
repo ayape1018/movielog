@@ -62,10 +62,10 @@
               Birthplace:
               =@director.birthplace
             -#   %a{:href => "#"} 15 Jun 2017
-            -# %li
-            -#   %i.fa.fa-calendar{"aria-hidden" => "true"}
-            -#   Created:
-            -#   %a{:href => "#"} Lim Sarah
+            %li
+              %i.fa.fa-calendar{"aria-hidden" => "true"}
+              updated:
+              =@director.updated_at.strftime("%F")
             -# %li
             -#   %i.fa.fa-user-o{"aria-hidden" => "true"}
             -#   Director:
@@ -80,6 +80,14 @@
           %h4=@director.name
         .line
         .single_portfolio_content
+        .row
+          .col-12
+            =link_to 'Edit director', edit_director_path, class: 'btn light-btn'
+        .container.pt-2
+          =link_to 'Delete', director_path(@director), method: :delete, data: {confirm: '本当に削除しますか？'}
+          \/
+          =link_to 'Go to top', root_path
+
           -# %p
           -# Works
           -# %br
@@ -97,7 +105,7 @@
       .col-12
         .section_heading
           %h4 Created Works
-        .related_projects_area.owl-carousel
+        .related_projects_area
           / Single Releted Project Area CSS
           -@director.works.each do |work|
             .single_releted_project
@@ -118,6 +126,9 @@
                         %i.fa.fa-link
                     %h5=work.title
                     %p="(#{work.release})"
+
+
+
             -# .single_gallery_content
             -#   %img{:alt => "", :src => "/img/gallery/p-11.jpg"}/
             -#   / Hover Effects
