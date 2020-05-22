@@ -50,7 +50,11 @@
         / Single Portfolio Image
         .single_portfolio_img
           -# %img{:alt => "", :src => "/img/gallery/p-34.jpg"}
-          =image_tag @work.image_url
+          -if @work.image_url.present?
+            =image_tag @work.image_url
+          -else
+            =image_tag '/img/default_work.png'
+
         / Single Portfolio Meta Data
         .single_portfolio_meta
           %ul
