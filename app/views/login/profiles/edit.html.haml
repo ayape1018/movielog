@@ -1,0 +1,21 @@
+%section
+  .container.pt-5
+    .h-100.pt-5
+      Profile
+      =bootstrap_form_with model: [:login, @profile], url: login_profile_path, local: true do |f|
+        =f.text_field :first_name
+        =f.text_field :last_name
+        =f.text_area :introduction
+        -# =f.file_field :image
+        -# -if @profile.image.present?
+        -#   =image_tag @profile.image_url(:thumb)
+        -#   .checkbox.checkbox-primary.m-t-5
+        -#     =f.check_box_without_bootstrap :remove_image
+        -#     =f.label :remove_image, 'Image Delete'
+        =f.submit
+  .container.pt-2
+    =link_to 'Delete', login_profile_path, method: :delete, data: {confirm: '本当に削除しますか？'}
+    \/
+    =link_to 'Back to profile page', login_profile_path
+    \/
+    =link_to 'Go to top', root_path

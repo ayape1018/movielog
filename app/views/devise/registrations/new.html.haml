@@ -1,0 +1,19 @@
+%section
+  .container.pt-5.pb-5
+    .h-100.pt-5
+      .row
+        .col-12
+          .section_heading
+            %h2 Sign Up
+            %p Lorem ipsum
+          = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = render "devise/shared/error_messages", resource: resource
+            .field
+              = f.email_field :email, autofocus: true, autocomplete: "email"
+            .field
+              = f.password_field :password, autocomplete: "new-password", placeholder: '6 characters minimum'
+            .field
+              = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: '6 characters minimum'
+            .actions
+              = f.submit "Sign up", class: 'btn btn-outline-info'
+          = render "devise/shared/links"

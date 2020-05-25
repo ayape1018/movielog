@@ -16,13 +16,15 @@
       .light-load
     =render 'header'
     -if notice.present?
-      .container
-        %p.notice.alert.alert-success{:role => "alert"}
-          =notice
+      .container.pt-5
+        .h-100.pt-5
+          %p.notice.alert.alert-success{:role => "alert"}
+            =notice
     -if alert.present?
-      .container
-        %p.alert.alert-danger{:role => "alert"}
-          =alert
+      .container.pt-5
+        .h-100.pt-5
+          %p.alert.alert-danger{:role => "alert"}
+            =alert
     = yield
     =render 'footer'
   = javascript_include_tag "application"

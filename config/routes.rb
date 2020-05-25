@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     get 'higher' => 'works#move_higher', as: 'higher', on: :member
   end
   resources :directors
-
+  namespace :login do
+    resource :profile, except: [:index, :show, :new]
+  end
 
 end

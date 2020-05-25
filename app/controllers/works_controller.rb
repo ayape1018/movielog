@@ -33,8 +33,8 @@ class WorksController < ApplicationController
     end
   end
 
-  def destory
-    @work.destory
+  def destroy
+    @work.destroy
     redirect_to works_path
   end
 

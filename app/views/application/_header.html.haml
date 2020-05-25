@@ -24,7 +24,14 @@
                 %li.nav-item
                   =link_to 'Directors', directors_path, class: 'nav-link animsition-link'
                   -# %a.nav-link.animsition-link{:href => "about-us.html"} About Us
-
+                -if user_signed_in?
+                  %li.nav-item
+                    =link_to 'Sign out', destroy_user_session_path, class: 'nav-link animsition-link'
+                -else
+                  %li.nav-item
+                    =link_to 'Sign in', new_user_session_path, class: 'nav-link animsition-link'
+                  %li.nav-item
+                    =link_to 'Sign up', new_user_registration_path, class: 'nav-link animsition-link'
                 -# %li.nav-item.dropdown
                 -#   %a#light-portfolio.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Portfolio
                 -#   .dropdown-menu{"aria-labelledby" => "light-portfolio"}

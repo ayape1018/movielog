@@ -32,8 +32,8 @@ class DirectorsController < ApplicationController
     end
   end
 
-  def destory
-    @director.destory
+  def destroy
+    @director.destroy
     redirect_to directors_path
   end
 

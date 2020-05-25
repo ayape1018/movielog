@@ -3,3 +3,4 @@
 //= require js/bootstrap.min
 //= require js/plugins
 //= require js/active
+//= require rails-ujs
