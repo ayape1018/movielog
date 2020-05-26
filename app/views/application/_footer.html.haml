@@ -9,22 +9,13 @@
           .foo_contents
             / Footer Logo
             .footer_logo
-              %a{:href => "index.html"} Champ.
+              =link_to root_path, class: 'navbar-brand' do
+                =image_tag '/img/logo_transparent.png'
             / Footer Social Icon
-            .footer_social_icon
-              %a{:href => "#"}
-                %i.ti-facebook{"aria-hidden" => "true"}
-              %a{:href => "#"}
-                %i.ti-google{"aria-hidden" => "true"}
-              %a{:href => "#"}
-                %i.ti-instagram{"aria-hidden" => "true"}
-              %a{:href => "#"}
-                %i.ti-dribbble{"aria-hidden" => "true"}
-              %a{:href => "#"}
-                %i.ti-youtube{"aria-hidden" => "true"}
-            %a{:href => "#"} care@Champ.com
-            %a{:href => "#"} (+88095) 1701 236 214
-            %a{:href => "#"} R#21, Melbourne, Australia
+            %p
+            movielog@movie.com
+            \/ (+1) 000 000 0000
+            \/ R#21, Toronto, Canada
           / Copywrite Text
           %p
             Made with

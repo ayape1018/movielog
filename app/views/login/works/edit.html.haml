@@ -4,7 +4,7 @@
       Edit work
       =render 'form'
   .container.pt-2
-    =link_to 'Delete', work_path(@work), method: :delete, data: {confirm: '本当に削除しますか？'}
+    =link_to 'Delete', login_work_path(@work), method: :delete, data: {confirm: '本当に削除しますか？'}
     \/
     =link_to 'Back to work page', work_path(@work)
     \/

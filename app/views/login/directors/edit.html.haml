@@ -4,7 +4,7 @@
       Edit Director
       =render 'form'
   .container.pt-2
-    =link_to 'Delete', director_path(@director), method: :delete, data: {confirm: '本当に削除しますか？'}
+    =link_to 'Delete', login_director_path(@director), method: :delete, data: {confirm: '本当に削除しますか？'}
     \/
     =link_to 'Back to director page', director_path(@director)
     \/
