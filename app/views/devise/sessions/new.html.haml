@@ -5,7 +5,7 @@
         .col-12
           .section_heading
             %h2 Log In
-            %p Lorem ipsum
+            -# %p Lorem ipsum
           = bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             .field
               = f.email_field :email, autofocus: true, autocomplete: "email"

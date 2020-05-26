@@ -31,6 +31,11 @@
 / >>>>>>>>>>>>>>>> Project area start <<<<<<<<<<<<<<<<
 %section#portfolio.gallery_area.section_padding_0_100.clearfix
   .container
+    .row.justify-content-end
+      .mb-3
+        = search_form_for @q, class: 'form-inline my-2 my-lg-0' do |f|
+          = f.search_field :name_cont, placeholder: 'name', class: 'form-control mr-sm-2'
+          = f.submit "Search", class: 'btn btn-outline-info'
     .row
       .col-12
         -# .gallery_menu

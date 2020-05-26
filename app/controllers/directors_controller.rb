@@ -2,7 +2,8 @@ class DirectorsController < ApplicationController
   before_action :set_director, only: [:show]
 
   def index
-    @directors = Director.all.by_id
+    @q = Director.ransack(params[:q])
+    @directors = @q.result(distinct: true)
   end
 
   def show
