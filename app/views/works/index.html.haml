@@ -36,6 +36,12 @@
   .container
     .row
       .col-12
+        = search_form_for @q, class: 'mb-5' do |f|
+
+          .form-group
+            = f.search_field :title_cont, placeholder: 'title', class: 'col-sm-4 form-control'
+          .form-group
+            = f.submit "Search", class: 'btn btn-outline-info btn-sm'
         -# .gallery_menu
           .text-center.portfolio-menu
             %button.active.btn.btn-md{"data-filter" => "*", :type => "button"}
