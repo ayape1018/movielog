@@ -34,14 +34,13 @@
 / >>>>>>>>>>>>>>>> Project area start <<<<<<<<<<<<<<<<
 %section#portfolio.gallery_area.section_padding_0_100.clearfix
   .container
+    .row.justify-content-end
+      .mb-3
+        = search_form_for @q, class: 'form-inline my-2 my-lg-0' do |f|
+          = f.search_field :title_cont, placeholder: 'title', class: 'form-control mr-sm-2'
+          = f.submit "Search", class: 'btn btn-outline-info'
     .row
       .col-12
-        = search_form_for @q, class: 'mb-5' do |f|
-
-          .form-group
-            = f.search_field :title_cont, placeholder: 'title', class: 'col-sm-4 form-control'
-          .form-group
-            = f.submit "Search", class: 'btn btn-outline-info btn-sm'
         -# .gallery_menu
           .text-center.portfolio-menu
             %button.active.btn.btn-md{"data-filter" => "*", :type => "button"}
