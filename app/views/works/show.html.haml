@@ -80,6 +80,8 @@
         .single_portfolio_title
           %h4=@work.title
         .line
+        -@work.tags.each do |tag|
+          =link_to tag.name, tag_path(tag), class: "badge badge-secondary"
         .single_portfolio_content
           %p=@work.description
         .row
