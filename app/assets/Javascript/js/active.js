@@ -8,7 +8,7 @@
             margin: 30,
             loop: true,
             nav: true,
-            navText: ['<i class="ti-angle-left" aria-hidden="true"></i>', '<i class="ti-angle-right" aria-hidden="true"></i>'],
+            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
             dots: false,
             autoplay: true,
             smartSpeed: 800,
@@ -75,7 +75,7 @@
         $.scrollUp({
             scrollSpeed: 2000,
             easingType: 'easeInOutQuart',
-            scrollText: '<i class="ti-angle-up"></i>'
+            scrollText: '<i class="fa fa-angle-up"></i>'
         });
     }
     // wow Active Code
@@ -155,7 +155,7 @@
         }
     });
 
-    // Fullscreen Active Code    
+    // Fullscreen Active Code
     $window.on('resizeEnd', function () {
         $(".full-height").height($window.height());
     });
