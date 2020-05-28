@@ -73,6 +73,7 @@
                     %h5=director.name
                     %p=director.birthplace
                     -# %p=work.release
+        =paginate @directors
         .row
           .col-12
             =link_to 'Register director', new_login_director_path, class: 'btn light-btn'

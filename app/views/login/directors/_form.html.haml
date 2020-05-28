@@ -1,6 +1,7 @@
 =bootstrap_form_with model: [:login, @director], local: true do |f|
   =f.text_field :name
   =f.text_field :birthplace
+  =f.text_area :description
   =f.file_field :image
   -if @director.image.present?
     =image_tag @director.image_url(:thumb)
