@@ -1,0 +1,11 @@
+production:
+  cloud_name: <%= ENV['CLOUDINARY_CLOUD_NAME'] %>
+  api_key: <%= ENV["CLOUDINARY_API_KEY"] %>
+  api_secret: <%= ENV["CLOUDINARY_API_SECRET"] %>
+  enhance_image_tag: true
+  static_file_support: true
+  # cloud_name: dgxhfwqp3
+  # api_key: '871715911254548'
+  # api_secret: 6OvVgZodbz6i1nMWpt-wb7ggP-M
+  # enhance_image_tag: true
+  # static_file_support: true
